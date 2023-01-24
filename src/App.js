@@ -14,23 +14,19 @@ function App() {
     setIsLoading(true);
     const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=1635890035cbba097fd5c26c8ea672a1`;
     axios.get(geoApi).then((response) => {
-      console.log(response);
-
       const { lat, lon } = response?.data[0];
-      console.log(lat, lon);
       const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1635890035cbba097fd5c26c8ea672a1`;
 
       axios.get(forecastApi).then((response) => {
-        console.log(response?.data?.list);
         setData(response?.data?.list);
         setIsLoading(false);
       });
     });
   };
 
-  const dateString = moment(1674572400).format("MM/DD/YYYY");
+  // const dateString = moment(1674572400).format("MM/DD/YYYY");
 
-  console.log(dateString);
+  // console.log(dateString);
 
   return (
     <div className="App">
