@@ -5,7 +5,7 @@ const Table = ({ data }) => {
   return (
     <div className="table_container">
       {data.map((details, i) => (
-        <table>
+        <table key={i}>
           <tr>
             <th colspan="2" style={{ backgroundColor: "#ffa500" }}>
               Date: {details.dt_txt}
@@ -23,10 +23,10 @@ const Table = ({ data }) => {
             <td>{details?.main?.temp_max}</td>
           </tr>
           <tr>
-            <td>Pressure</td>
+            <th>Pressure</th>
             <td>{details?.main?.pressure}</td>
           </tr>
-          <td>Humadity</td>
+          <th>Humadity</th>
           <td>{details?.main?.humidity}</td>
         </table>
       ))}

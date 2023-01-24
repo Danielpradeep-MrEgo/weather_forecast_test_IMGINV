@@ -14,6 +14,7 @@ function App() {
     setIsLoading(true);
     const geoApi = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=1635890035cbba097fd5c26c8ea672a1`;
     axios.get(geoApi).then((response) => {
+      // console.log(response);
       const { lat, lon } = response?.data[0];
       const forecastApi = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1635890035cbba097fd5c26c8ea672a1`;
 
@@ -44,9 +45,7 @@ function App() {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             hiddenLabel
-            defaultValue="Small"
             size="small"
-            borderColor="black"
             color="warning"
             required
             sx={{

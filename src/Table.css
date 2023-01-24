@@ -5,6 +5,11 @@ td {
   border: 1px solid black;
   border-collapse: collapse;
   margin: 10px;
+  align-self: center;
+}
+
+td {
+  text-align: center;
 }
 
 .table_container {
