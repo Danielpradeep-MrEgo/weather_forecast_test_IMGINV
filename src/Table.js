@@ -12,7 +12,7 @@ const Table = ({ data }) => {
             </th>
           </tr>
           <tr>
-            <th colspan="2">Temrature</th>
+            <th colspan="2">Temperature</th>
           </tr>
           <tr>
             <th>Min</th>
